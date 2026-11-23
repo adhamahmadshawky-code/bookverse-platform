@@ -1,0 +1,583 @@
+[
+  {
+    "id": "pride-and-prejudice",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "year": 1813,
+    "pages": 432,
+    "genre": "Romance",
+    "language": "eng",
+    "description": "A sharp, tender comedy of manners. Elizabeth Bennet and Mr. Darcy must look beyond first impressions in a world where love and reputation rarely agree.",
+    "cover": "",
+    "rating": null,
+    "ratingCount": 0,
+    "popularity": 100,
+    "source": "curated",
+    "gutenbergId": 1342,
+    "chapters": [
+      {
+        "title": "Chapter 1",
+        "start": 37
+      },
+      {
+        "title": "Chapter 2",
+        "start": 154
+      },
+      {
+        "title": "Chapter 3",
+        "start": 262
+      },
+      {
+        "title": "Chapter 4",
+        "start": 432
+      },
+      {
+        "title": "Chapter 5",
+        "start": 548
+      },
+      {
+        "title": "Chapter 6",
+        "start": 661
+      },
+      {
+        "title": "Chapter 7",
+        "start": 928
+      },
+      {
+        "title": "Chapter 8",
+        "start": 1162
+      },
+      {
+        "title": "Chapter 9",
+        "start": 1409
+      },
+      {
+        "title": "Chapter 10",
+        "start": 1603
+      },
+      {
+        "title": "Chapter 11",
+        "start": 1882
+      },
+      {
+        "title": "Chapter 12",
+        "start": 2068
+      },
+      {
+        "title": "Chapter 13",
+        "start": 2138
+      },
+      {
+        "title": "Chapter 14",
+        "start": 2318
+      },
+      {
+        "title": "Chapter 15",
+        "start": 2438
+      },
+      {
+        "title": "Chapter 16",
+        "start": 2601
+      },
+      {
+        "title": "Chapter 17",
+        "start": 2961
+      },
+      {
+        "title": "Chapter 18",
+        "start": 3094
+      },
+      {
+        "title": "Chapter 19",
+        "start": 3616
+      },
+      {
+        "title": "Chapter 20",
+        "start": 3805
+      },
+      {
+        "title": "Chapter 21",
+        "start": 3982
+      },
+      {
+        "title": "Chapter 22",
+        "start": 4192
+      },
+      {
+        "title": "Chapter 23",
+        "start": 4365
+      },
+      {
+        "title": "Chapter 24",
+        "start": 4540
+      },
+      {
+        "title": "Chapter 25",
+        "start": 4744
+      },
+      {
+        "title": "Chapter 26",
+        "start": 4903
+      },
+      {
+        "title": "Chapter 27",
+        "start": 5129
+      },
+      {
+        "title": "Chapter 28",
+        "start": 5271
+      },
+      {
+        "title": "Chapter 29",
+        "start": 5423
+      },
+      {
+        "title": "Chapter 30",
+        "start": 5687
+      },
+      {
+        "title": "Chapter 31",
+        "start": 5809
+      },
+      {
+        "title": "Chapter 32",
+        "start": 5979
+      },
+      {
+        "title": "Chapter 33",
+        "start": 6151
+      },
+      {
+        "title": "Chapter 34",
+        "start": 6362
+      },
+      {
+        "title": "Chapter 35",
+        "start": 6583
+      },
+      {
+        "title": "Chapter 36",
+        "start": 6850
+      },
+      {
+        "title": "Chapter 37",
+        "start": 7042
+      },
+      {
+        "title": "Chapter 38",
+        "start": 7187
+      },
+      {
+        "title": "Chapter 39",
+        "start": 7301
+      },
+      {
+        "title": "Chapter 40",
+        "start": 7465
+      },
+      {
+        "title": "Chapter 41",
+        "start": 7650
+      },
+      {
+        "title": "Chapter 42",
+        "start": 7899
+      },
+      {
+        "title": "Chapter 43",
+        "start": 8080
+      },
+      {
+        "title": "Chapter 44",
+        "start": 8587
+      },
+      {
+        "title": "Chapter 45",
+        "start": 8806
+      },
+      {
+        "title": "Chapter 46",
+        "start": 8982
+      },
+      {
+        "title": "Chapter 47",
+        "start": 9267
+      },
+      {
+        "title": "Chapter 48",
+        "start": 9694
+      },
+      {
+        "title": "Chapter 49",
+        "start": 9926
+      },
+      {
+        "title": "Chapter 50",
+        "start": 10185
+      },
+      {
+        "title": "Chapter 51",
+        "start": 10407
+      },
+      {
+        "title": "Chapter 52",
+        "start": 10622
+      },
+      {
+        "title": "Chapter 53",
+        "start": 10943
+      },
+      {
+        "title": "Chapter 54",
+        "start": 11262
+      },
+      {
+        "title": "Chapter 55",
+        "start": 11449
+      },
+      {
+        "title": "Chapter 56",
+        "start": 11717
+      },
+      {
+        "title": "Chapter 57",
+        "start": 12047
+      },
+      {
+        "title": "Chapter 58",
+        "start": 12224
+      },
+      {
+        "title": "Chapter 59",
+        "start": 12492
+      },
+      {
+        "title": "Chapter 60",
+        "start": 12765
+      },
+      {
+        "title": "Chapter 61",
+        "start": 12937
+      }
+    ]
+  },
+  {
+    "id": "frankenstein",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "year": 1818,
+    "pages": 280,
+    "genre": "Gothic",
+    "language": "eng",
+    "description": "An ambitious scientist gives life to a creature, then abandons him. A haunting story of responsibility, loneliness, and what it means to be human.",
+    "cover": "",
+    "rating": null,
+    "ratingCount": 0,
+    "popularity": 90,
+    "source": "curated",
+    "gutenbergId": 84,
+    "chapters": [
+      {
+        "title": "Chapter 1",
+        "start": 63
+      },
+      {
+        "title": "Chapter 2",
+        "start": 65
+      },
+      {
+        "title": "Chapter 3",
+        "start": 67
+      },
+      {
+        "title": "Chapter 4",
+        "start": 69
+      },
+      {
+        "title": "Chapter 5",
+        "start": 71
+      },
+      {
+        "title": "Chapter 6",
+        "start": 73
+      },
+      {
+        "title": "Chapter 7",
+        "start": 75
+      },
+      {
+        "title": "Chapter 8",
+        "start": 77
+      },
+      {
+        "title": "Chapter 9",
+        "start": 79
+      },
+      {
+        "title": "Chapter 10",
+        "start": 81
+      },
+      {
+        "title": "Chapter 11",
+        "start": 83
+      },
+      {
+        "title": "Chapter 12",
+        "start": 85
+      },
+      {
+        "title": "Chapter 13",
+        "start": 87
+      },
+      {
+        "title": "Chapter 14",
+        "start": 89
+      },
+      {
+        "title": "Chapter 15",
+        "start": 91
+      },
+      {
+        "title": "Chapter 16",
+        "start": 93
+      },
+      {
+        "title": "Chapter 17",
+        "start": 95
+      },
+      {
+        "title": "Chapter 18",
+        "start": 97
+      },
+      {
+        "title": "Chapter 19",
+        "start": 99
+      },
+      {
+        "title": "Chapter 20",
+        "start": 101
+      },
+      {
+        "title": "Chapter 21",
+        "start": 103
+      },
+      {
+        "title": "Chapter 22",
+        "start": 105
+      },
+      {
+        "title": "Chapter 23",
+        "start": 107
+      },
+      {
+        "title": "Chapter 24",
+        "start": 109
+      },
+      {
+        "title": "Chapter 1",
+        "start": 715
+      },
+      {
+        "title": "Chapter 2",
+        "start": 881
+      },
+      {
+        "title": "Chapter 3",
+        "start": 1092
+      },
+      {
+        "title": "Chapter 4",
+        "start": 1347
+      },
+      {
+        "title": "Chapter 5",
+        "start": 1583
+      },
+      {
+        "title": "Chapter 6",
+        "start": 1821
+      },
+      {
+        "title": "Chapter 7",
+        "start": 2087
+      },
+      {
+        "title": "Chapter 8",
+        "start": 2456
+      },
+      {
+        "title": "Chapter 9",
+        "start": 2761
+      },
+      {
+        "title": "Chapter 10",
+        "start": 2970
+      },
+      {
+        "title": "Chapter 11",
+        "start": 3194
+      },
+      {
+        "title": "Chapter 12",
+        "start": 3458
+      },
+      {
+        "title": "Chapter 13",
+        "start": 3665
+      },
+      {
+        "title": "Chapter 14",
+        "start": 3869
+      },
+      {
+        "title": "Chapter 15",
+        "start": 4053
+      },
+      {
+        "title": "Chapter 16",
+        "start": 4362
+      },
+      {
+        "title": "Chapter 17",
+        "start": 4676
+      },
+      {
+        "title": "Chapter 18",
+        "start": 4859
+      },
+      {
+        "title": "Chapter 19",
+        "start": 5142
+      },
+      {
+        "title": "Chapter 20",
+        "start": 5393
+      },
+      {
+        "title": "Chapter 21",
+        "start": 5721
+      },
+      {
+        "title": "Chapter 22",
+        "start": 6087
+      },
+      {
+        "title": "Chapter 23",
+        "start": 6428
+      },
+      {
+        "title": "Chapter 24",
+        "start": 6676
+      }
+    ]
+  },
+  {
+    "id": "alice-in-wonderland",
+    "title": "Alice’s Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "year": 1865,
+    "pages": 192,
+    "genre": "Adventure",
+    "language": "eng",
+    "description": "Follow a curious young girl into a world of impossible logic, peculiar creatures, and wonderfully unexpected conversations.",
+    "cover": "",
+    "rating": null,
+    "ratingCount": 0,
+    "popularity": 80,
+    "source": "curated",
+    "gutenbergId": 11,
+    "chapters": []
+  },
+  {
+    "id": "moby-dick",
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "year": 1851,
+    "pages": 635,
+    "genre": "Adventure",
+    "language": "eng",
+    "description": "A voyage across an immense ocean becomes an unforgettable inquiry into obsession, nature, and the limits of human knowledge.",
+    "cover": "",
+    "rating": null,
+    "ratingCount": 0,
+    "popularity": 70,
+    "source": "curated",
+    "gutenbergId": 2701,
+    "chapters": []
+  },
+  {
+    "id": "the-time-machine",
+    "title": "The Time Machine",
+    "author": "H. G. Wells",
+    "year": 1895,
+    "pages": 118,
+    "genre": "Science fiction",
+    "language": "eng",
+    "description": "A Victorian inventor travels to the distant future and discovers that the fate of humanity is stranger, and more troubling, than he imagined.",
+    "cover": "",
+    "rating": null,
+    "ratingCount": 0,
+    "popularity": 60,
+    "source": "curated",
+    "gutenbergId": 35,
+    "chapters": []
+  },
+  {
+    "id": "the-republic",
+    "title": "The Republic",
+    "author": "Plato",
+    "year": -375,
+    "pages": 416,
+    "genre": "Philosophy",
+    "language": "eng",
+    "description": "What is justice? Through a series of searching dialogues, Plato considers education, power, truth, and the shape of a good society.",
+    "cover": "",
+    "rating": null,
+    "ratingCount": 0,
+    "popularity": 50,
+    "source": "curated",
+    "gutenbergId": 1497,
+    "chapters": [
+      {
+        "title": "BOOK I.",
+        "start": 8525
+      },
+      {
+        "title": "BOOK II.",
+        "start": 10220
+      },
+      {
+        "title": "BOOK III.",
+        "start": 11645
+      },
+      {
+        "title": "BOOK IV.",
+        "start": 13483
+      },
+      {
+        "title": "BOOK V.",
+        "start": 15074
+      },
+      {
+        "title": "BOOK VI.",
+        "start": 17023
+      },
+      {
+        "title": "BOOK VII.",
+        "start": 18580
+      },
+      {
+        "title": "BOOK VIII.",
+        "start": 20047
+      },
+      {
+        "title": "BOOK IX.",
+        "start": 21620
+      },
+      {
+        "title": "BOOK X.",
+        "start": 22938
+      }
+    ]
+  }
+]
