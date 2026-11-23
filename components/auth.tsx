@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
@@ -10,9 +10,14 @@ export function Auth() {
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const router = useRouter();
-  const recovery =
-    typeof window !== "undefined" &&
-    window.location.hash.includes("type=recovery");
+  const [recovery, setRecovery] = useState(false);
+  useEffect(() => {
+    if (window.location.hash.includes("type=recovery")) setRecovery(true);
+    const subscription = supabase?.auth.onAuthStateChange((event) => {
+      if (event === "PASSWORD_RECOVERY") setRecovery(true);
+    });
+    return () => subscription?.data.subscription.unsubscribe();
+  }, []);
   const actual = recovery ? "update" : mode;
   return (
     <div className="auth-card">
@@ -80,6 +85,7 @@ export function Auth() {
                 const { error } = await supabase!.auth.updateUser({ password });
                 if (error) throw error;
                 window.history.replaceState(null, "", "/auth");
+                setRecovery(false);
                 setMode("login");
                 setMessage("Password updated. You can now sign in.");
               } else {

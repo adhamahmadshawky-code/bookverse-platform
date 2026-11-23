@@ -56,7 +56,7 @@ export function Reader({ book }: { book: Book }) {
     const next = Math.max(0, Math.min(max, page));
     setPosition(next);
     void update(book, { progress: max ? (next / max) * 100 : 0, saved: true });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }
   const chapterEntries = (book.chapters || []).filter(
     (x, i, a) => a.findIndex((v) => v.title === x.title) === i,

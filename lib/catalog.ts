@@ -105,14 +105,38 @@ export async function getBook(id: string): Promise<Book | null> {
     });
     if (!r.ok) return null;
     const d = await r.json();
+    const authorKey = d.authors?.[0]?.author?.key;
+    const readJson = async (url: string) => {
+      try {
+        const response = await fetch(url, {
+          next: { revalidate: 86400 },
+          signal: AbortSignal.timeout(6000),
+        });
+        return response.ok ? await response.json() : null;
+      } catch {
+        return null;
+      }
+    };
+    const [author, editions, ratings] = await Promise.all([
+      /^\/authors\/OL\d+A$/.test(authorKey || "")
+        ? readJson(`https://openlibrary.org${authorKey}.json`)
+        : null,
+      readJson(`https://openlibrary.org/works/${id}/editions.json?limit=1`),
+      readJson(`https://openlibrary.org/works/${id}/ratings.json`),
+    ]);
+    const edition = editions?.entries?.[0];
+    const yearMatch = String(edition?.publish_date || "").match(
+      /\b(1[0-9]{3}|20[0-9]{2})\b/,
+    );
     return {
       id,
       title: d.title,
-      author: "See Open Library for author details",
-      year: 0,
-      pages: null,
+      author: author?.name || "Author not provided",
+      year: yearMatch ? Number(yearMatch[0]) : 0,
+      pages: edition?.number_of_pages || null,
       genre: d.subjects?.[0] || "Literature",
-      language: "See editions",
+      language:
+        edition?.languages?.[0]?.key?.split("/").pop() || "Not provided",
       description:
         typeof d.description === "string"
           ? d.description
@@ -120,8 +144,8 @@ export async function getBook(id: string): Promise<Book | null> {
       cover: d.covers?.[0]
         ? `https://covers.openlibrary.org/b/id/${d.covers[0]}-L.jpg`
         : "",
-      rating: null,
-      ratingCount: 0,
+      rating: ratings?.summary?.average || null,
+      ratingCount: ratings?.summary?.count || 0,
       popularity: 0,
       source: "openlibrary",
     };

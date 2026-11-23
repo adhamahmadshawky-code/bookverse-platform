@@ -2,10 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 export async function POST(req: NextRequest) {
-  if (
-    !req.headers.get("origin") ||
-    new URL(req.headers.get("origin")!).host !== req.headers.get("host")
-  )
+  let originHost = "";
+  try {
+    originHost = new URL(req.headers.get("origin") || "").host;
+  } catch {}
+  if (!originHost || originHost !== req.headers.get("host"))
     return NextResponse.json({ error: "Invalid origin" }, { status: 403 });
   if (Number(req.headers.get("content-length") || 0) > 2048)
     return NextResponse.json({ error: "Request too large" }, { status: 413 });

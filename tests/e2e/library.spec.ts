@@ -144,3 +144,38 @@ test("search empty state and clear filters", async ({ page }) => {
   await page.getByRole("button", { name: "Reset search" }).click();
   await expect(page.getByText("6 books", { exact: true })).toBeVisible();
 });
+
+test("live remote catalog search returns source metadata and lawful detail links", async ({
+  page,
+}) => {
+  test.setTimeout(60000);
+  await page.goto("/explore");
+  await page.getByRole("textbox", { name: "Search books" }).fill("tolkien");
+  await page.getByRole("button", { name: "Search", exact: true }).click();
+  await expect(page.locator(".catalog-grid .book-card").first()).toBeVisible({
+    timeout: 25000,
+  });
+  await expect(
+    page.getByText("Open Library is temporarily unavailable.", {
+      exact: false,
+    }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole("link", { name: "View The Hobbit", exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("link", { name: "View The Hobbit", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "The Hobbit", exact: true }),
+  ).toBeVisible({ timeout: 25000 });
+  await expect(
+    page.getByRole("link", { name: "Check preview availability" }),
+  ).toHaveAttribute("href", /openlibrary.org\/works\/OL\d+W/);
+  await expect(page.getByRole("link", { name: "Download TXT" })).toHaveCount(0);
+  await page.screenshot({
+    path: "/downloads/bookverse-remote-detail.png",
+    fullPage: true,
+    animations: "disabled",
+  });
+});

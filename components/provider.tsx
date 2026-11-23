@@ -27,6 +27,7 @@ const C = createContext<Context | null>(null);
 export function LibraryProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [ready, setReady] = useState(false);
+  const [shelfReady, setShelfReady] = useState(false);
   const [shelf, setShelf] = useState<Shelf>({});
   const [notice, setNotice] = useState("");
   useEffect(() => {
@@ -51,18 +52,24 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
   }, []);
   useEffect(() => {
     if (!ready) return;
+    let cancelled = false;
+    setShelfReady(false);
+    setShelf({});
     if (!user) {
       try {
         setShelf(JSON.parse(localStorage.getItem("bookverse-guest") || "{}"));
       } catch {
         setShelf({});
       }
+      setShelfReady(true);
       return;
     }
     supabase!
       .from("bookshelf")
       .select("*")
       .then(({ data, error }) => {
+        if (cancelled) return;
+        setShelfReady(true);
         if (error) {
           setNotice("Your cloud shelf could not be loaded.");
           return;
@@ -79,6 +86,9 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
           };
         setShelf(result);
       });
+    return () => {
+      cancelled = true;
+    };
   }, [user, ready]);
   const update = useCallback(
     async (
@@ -106,22 +116,21 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
           localStorage.setItem("bookverse-guest", JSON.stringify(next));
           setNotice("Saved on this device. Sign in to sync across devices.");
         } catch {
+          setShelf(shelf);
           setNotice("Storage is full. Your change could not be saved.");
         }
         return;
       }
-      const { error } = await supabase!
-        .from("bookshelf")
-        .upsert({
-          user_id: user.id,
-          book_id: book.id,
-          book,
-          favorite: entry.favorite,
-          saved: entry.saved,
-          progress: entry.progress,
-          bookmark: entry.bookmark,
-          updated_at: entry.updatedAt,
-        });
+      const { error } = await supabase!.from("bookshelf").upsert({
+        user_id: user.id,
+        book_id: book.id,
+        book,
+        favorite: entry.favorite,
+        saved: entry.saved,
+        progress: entry.progress,
+        bookmark: entry.bookmark,
+        updated_at: entry.updatedAt,
+      });
       if (error) {
         setShelf(shelf);
         setNotice("Could not save this change. Please try again.");
@@ -138,13 +147,18 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
     <C.Provider
       value={{
         user,
-        ready,
+        ready: ready && shelfReady,
         shelf,
         notice,
         setNotice,
         update,
         logout: async () => {
-          await supabase?.auth.signOut();
+          const result = await supabase?.auth.signOut();
+          if (result?.error) {
+            setNotice("Could not sign out. Please try again.");
+            return;
+          }
+          setShelf({});
           setUser(null);
           setNotice("Signed out.");
         },
